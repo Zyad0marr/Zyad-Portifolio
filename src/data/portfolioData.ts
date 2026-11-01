@@ -1,4 +1,4 @@
-import { SkillCategory, ServiceItem } from '../types';
+import { SkillCategory, ServiceItem, QAProjectItem } from '../types';
 
 export const PERSONAL_INFO = {
   name: "Ziad Omar",
@@ -16,9 +16,10 @@ export const PERSONAL_INFO = {
   aboutParagraph4: "I approach testing with attention to detail, logical thinking, and a commitment to continuous learning that contributes to delivering stable, reliable software.",
   aboutText: "I’m Ziad Omar, a Software Tester focused on software quality, reliability, and delivering better user experiences.\n\nI work on understanding software requirements, designing clear and effective test cases, executing tests carefully, identifying defects, and documenting issues in a structured way.\n\nI focus on thinking from both the user’s and the system’s perspective to help identify problems that could affect functionality, usability, or the overall user experience.\n\nI approach testing with attention to detail, logical thinking, and a commitment to continuous learning that contributes to delivering stable, reliable software.",
 
-  projectsTitle: "Projects (In Progress)",
-  projectsHeading: "Projects Underway",
-  projectsText: "Projects are currently in progress. I’m building practical projects as I continue developing my Software Testing and technical skills. More projects will be added soon.",
+  projectsTitle: "Projects",
+  projectsBadge: "QA Case Studies",
+  projectsHeading: "Featured Testing Projects",
+  projectsText: "Hands-on software testing case studies demonstrating end-to-end quality assurance, test documentation, and defect management.",
 
   servicesTitle: "What I Can Help With",
   servicesSubtitle: "Current Skills & Areas of Focus",
@@ -150,11 +151,184 @@ export const OFFERED_SERVICES: ServiceItem[] = [
   }
 ];
 
+export const PROJECTS_DATA: QAProjectItem[] = [
+  {
+    id: "manage-employee-break-tickets",
+    title: "Manage Employee Break Tickets",
+    category: "Manual Software Testing",
+    type: "Practical Manual Testing Project",
+    shortDescription: "Performed manual testing on the Manage Employee Break Tickets system to evaluate its functionality, verify expected behavior, and identify potential defects.",
+    description: "Performed manual testing on the Manage Employee Break Tickets system to evaluate its functionality, verify expected behavior, and identify potential defects.",
+    workPerformed: [
+      "Analyzed the application requirements and functionality.",
+      "Created detailed Test Scenarios.",
+      "Designed and documented Test Cases.",
+      "Executed manual test cases.",
+      "Identified and documented bugs in professional Bug Reports.",
+      "Verified expected versus actual results."
+    ],
+    deliverableTags: [
+      "Test Scenarios",
+      "Test Cases",
+      "Bug Reports"
+    ],
+    testCases: [
+      {
+        testId: "TC_NAME_1",
+        testName: "Alphabetic characters and spaces only",
+        testDescription: "Verify that name field accepts a valid name input contains alphabetic characters and spaces",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The test should be run during shift hours\n3- The user should be located at the \"Break Ticket\" section",
+        testData: "Name: Jhon Doe\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill name\n2- Fill start time\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- The break ticket should be submitted successfully\n2- A success message is displayed\n3- Ticket appears in\"pending approval\" section",
+        actualResult: "Ticket submit successfully and appears in pending approval section",
+        status: "Passed"
+      },
+      {
+        testId: "TC_NAME_2",
+        testName: "Name with less than 2 characters",
+        testDescription: "Verify the name field doesn't accept name input with characters number < 2",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The test should be run during shift hours\n3- The user should be located at the \"Break Ticket\" section",
+        testData: "Name: J\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- the break ticket should'nt submitted\n2- Error message displayed at name field",
+        actualResult: "Error message at name field \"enter 2–50 alphabetic characters and spaces\"",
+        status: "Passed"
+      },
+      {
+        testId: "TC_NAME_3",
+        testName: "Name with more than 50 characters",
+        testDescription: "Verify the name field doesn't accept name input with characters number > 50",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The test should be run during shift hours\n3- The user should be located at the \"Break Ticket\" section",
+        testData: "Name: (More than 50 characters)\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- the break ticket should'nt submitted\n2- Error message displayed at name field",
+        actualResult: "Error message at name field \"enter 2–50 alphabetic characters and spaces\"",
+        status: "Passed"
+      },
+      {
+        testId: "TC_NAME_4",
+        testName: "Unregistered Employee Name",
+        testDescription: "Verify the name must match the registered employee name in the system",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The test should be run during shift hours\n3- The user should be located at the \"Break Ticket\" section\n4- A registered employee name should exist in the system",
+        testData: "Name: Ali Ali\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- the break ticket should'nt submitted\n2- Error message displayed at name field",
+        actualResult: "Error message at name field \"Name is not in the registered employee list\"",
+        status: "Passed"
+      },
+      {
+        testId: "TC_ST_TIME_2",
+        testName: "Start time must be in shift hours",
+        testDescription: "The employee break must be in shift hour (8:00 - 17:00)",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The employee should be within their scheduled shift hours (08:00–17:00)",
+        testData: "Name: Jhon Doe\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- The break ticket should be submitted successfully\n2- A success message is displayed\n3- Ticket appears in\"pending approval\" section",
+        actualResult: "Ticket submit successfully and appears in pending approval section",
+        status: "Passed"
+      },
+      {
+        testId: "TC_ST_TIME_3",
+        testName: "Start time must be greater than current system time",
+        testDescription: "Verify system reject any start time that is equal to or earlier than the current system time and accepts only a future time",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The employee should be within their scheduled shift hours (08:00–17:00)",
+        testData: "Current time: 14:00\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- The break ticket should be submitted successfully\n2- A success message is displayed\n3- Ticket appears in\"pending approval\" section",
+        actualResult: "Ticket submit successfully and appears in pending approval section",
+        status: "Passed"
+      },
+      {
+        testId: "TC_ST_TIME_4",
+        testName: "Can't be left blank",
+        testDescription: "Verify system display a required field when you left blank",
+        testPrecondition: "1- The user should be logged into the system as an employee.\n2- The employee should have access to the break ticket section.\n3- The required field should be available and empty",
+        testData: "Name: Empty\nStart: 15:00\nDuration: 30",
+        testSteps: "1- Fill start\n2- Fill duration\n3- Click submit",
+        expectedResult: "1- the break ticket should'nt submitted\n2- Error message displayed at name field required",
+        actualResult: "Error message at name field (Required)",
+        status: "Passed"
+      },
+      {
+        testId: "TC_BC_TIME_1",
+        testName: "Break duration 60 minutes.",
+        testDescription: "Verify the break duration doesn't exceed 60 minutes",
+        testPrecondition: "1- The user should be logged into the system as an employee.\n2- The employee should have access to the break ticket section.\n3- The maximum break duration should be set to 60 minutes",
+        testData: "Name: Jhon Doe\nStart: 15:00\nDuration: 50",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- The break ticket should be submitted successfully\n2- A success message is displayed\n3- Ticket appears in\"pending approval\" section",
+        actualResult: "Ticket submit successfully and appears in pending approval section",
+        status: "Passed"
+      },
+      {
+        testId: "TC_BC_TIME_2",
+        testName: "Return time must be greater than the start time",
+        testDescription: "Verify the return time greater than start time",
+        testPrecondition: "1- The user should be logged into the system as an employee\n2- The employee should be within their scheduled shift hours (08:00–17:00)",
+        testData: "Start time: 14:00\nReturn time: 15:00",
+        testSteps: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- The break ticket should be submitted successfully\n2- A success message is displayed\n3- Ticket appears in\"pending approval\" section",
+        actualResult: "Ticket submit successfully and appears in pending approval section",
+        status: "Passed"
+      }
+    ],
+    bugReports: [
+      {
+        bugId: "TC_ST_TIME_1",
+        testName: "24-Hour Time Format",
+        description: "Verify that the time field accepts only the 24-hour format",
+        preconditions: "1- The user should be logged into the system as an employee\n2- The test should be run during shift hours\n3- The user should be located at the \"Break Ticket\" section",
+        testData: "Name: Jhon Doe\nStart: 15:00\nDuration: 30",
+        stepsToReproduce: "1- Fill name\n2- Fill start\n3- Fill duration\n4- Click submit",
+        expectedResult: "1- the break ticket should submitted",
+        actualResult: "The time field accepts 12-hour format instead of 24-hour format.",
+        status: "Fail",
+        sourceSheet: "Test Cases Matrix – Sheet 1 (Row 6)",
+        screenshotSrc: "/assets/aistudio/__________2026-10-25_000403_b82f97f3.png"
+      }
+    ],
+    documentationImages: [
+      {
+        id: "doc-tc-1",
+        section: "Test Cases",
+        sheetName: "Sheet 1: Input Validation & Time Format",
+        title: "Test Cases Matrix – Field & Input Validation",
+        subtitle: "TC_NAME_1 to TC_ST_TIME_1 (Character bounds, unregistered user & time format)",
+        src: "/assets/aistudio/__________2026-10-25_000403_b82f97f3.png",
+        caption: "Original execution spreadsheet recording input validation rules, character lengths (2–50 characters), and execution statuses.",
+        notes: "Includes documented defect TC_ST_TIME_1 where the time field accepted 12-hour format instead of the specified 24-hour format."
+      },
+      {
+        id: "doc-tc-2",
+        section: "Test Cases",
+        sheetName: "Sheet 2: Shift Hours & Duration Limits",
+        title: "Test Cases Matrix – Working Hours & Duration Rules",
+        subtitle: "TC_ST_TIME_2 to TC_BC_TIME_2 (Shift hours 08:00–17:00, blank checks & max duration)",
+        src: "/assets/aistudio/__________2026-10-25_000417_fa6cb15c.png",
+        caption: "Execution matrix for business rules including shift boundary verification, system time constraints, required fields, and 60-minute maximum duration limits.",
+        notes: "All test cases executed with verified preconditions, test data, and expected vs. actual outcomes."
+      },
+      {
+        id: "doc-bug-1",
+        section: "Bug Reports",
+        sheetName: "Execution Defect Log: TC_ST_TIME_1",
+        title: "Bug Report Evidence – 24-Hour Time Format Validation Failure",
+        subtitle: "Logged Defect from Test Matrix: System accepts 12-hour format instead of 24-hour format",
+        src: "/assets/aistudio/__________2026-10-25_000403_b82f97f3.png",
+        caption: "Execution matrix defect record: TC_ST_TIME_1 highlighted in red with status 'Fail'. Actual behavior allowed 12-hour format contrary to specification.",
+        highlightDefect: "TC_ST_TIME_1: The time field accepts 12-hour format instead of 24-hour format. (Status: Fail)"
+      }
+    ]
+  }
+];
+
 export const NAV_LINKS = [
   { id: "cover", label: "Cover" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" }
 ];
 

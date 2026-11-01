@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Cover } from './components/Cover';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
+import { Projects } from './components/Projects';
 import { OfferedServices } from './components/OfferedServices';
 import { CallToAction } from './components/CallToAction';
 import { Contact } from './components/Contact';
@@ -18,6 +19,7 @@ function PortfolioContent() {
       'about',
       'skills',
       'services',
+      'projects',
       'contact'
     ];
     
@@ -53,6 +55,7 @@ function PortfolioContent() {
         <About />
         <Skills />
         <OfferedServices />
+        <Projects />
         <CallToAction />
         <Contact />
       </main>
