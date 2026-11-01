@@ -538,60 +538,65 @@ export const Projects: React.FC = () => {
                 </button>
               </div>
 
-              {/* Navigation Tabs Organized strictly into Test Cases and Bug Reports */}
-              <div className="px-4 sm:px-6 pt-3 border-b border-[#e5e3dc] dark:border-[#1e293b] flex gap-2 sm:gap-4 overflow-x-auto text-xs font-semibold bg-white dark:bg-[#111827] no-scrollbar">
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('testCases')}
-                  className={`pb-2.5 px-2 border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-                    activeTab === 'testCases'
-                      ? 'border-[#2563eb] text-[#2563eb] dark:border-[#3b82f6] dark:text-[#60a5fa]'
-                      : 'border-transparent text-[#64748b] dark:text-[#94a3b8] hover:text-[#0f172a] dark:hover:text-[#f8fafc]'
-                  }`}
-                >
-                  <CheckSquare className="w-4 h-4" />
-                  <span>Test Cases</span>
-                  <span className={`px-1.5 py-0.2 rounded text-[10px] ${
-                    activeTab === 'testCases' 
-                      ? 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300' 
-                      : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'
-                  }`}>
-                    {selectedProject.testCases.length}
-                  </span>
-                </button>
+              {/* Navigation Tabs Bar - Fixed & Equal Dimensions Side by Side */}
+              <div 
+                role="tablist" 
+                aria-label="Project documentation sections"
+                className="px-4 sm:px-6 py-3 sm:py-3.5 border-b border-[#e2e8f0] dark:border-[#1e293b] bg-[#f8fafc] dark:bg-[#0c1220]"
+              >
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full">
+                  {/* Tab: Test Cases */}
+                  <button
+                    type="button"
+                    role="tab"
+                    id="tab-test-cases"
+                    aria-selected={activeTab === 'testCases'}
+                    onClick={() => setActiveTab('testCases')}
+                    className={`w-full h-12 sm:h-14 min-h-[48px] sm:min-h-[56px] px-3 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 sm:gap-3 text-center select-none active:scale-[0.99] ${
+                      activeTab === 'testCases'
+                        ? 'bg-blue-600 text-white border-blue-600 dark:border-blue-500 shadow-xs'
+                        : 'bg-white dark:bg-[#131b2e] text-[#334155] dark:text-[#cbd5e1] border-[#cbd5e1] dark:border-[#334155] hover:bg-slate-50 dark:hover:bg-[#1a233a] hover:border-slate-400 dark:hover:border-slate-500 hover:text-[#0f172a] dark:hover:text-white'
+                    }`}
+                  >
+                    <CheckSquare className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors ${activeTab === 'testCases' ? 'text-white' : 'text-[#2563eb] dark:text-[#60a5fa]'}`} />
+                    <span className="text-xs sm:text-sm md:text-base font-bold tracking-tight whitespace-nowrap">
+                      Test Cases
+                    </span>
+                    <span className={`px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full text-[11px] sm:text-xs font-bold leading-none shrink-0 transition-colors ${
+                      activeTab === 'testCases'
+                        ? 'bg-white/20 text-white'
+                        : 'bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/70 dark:border-blue-900/60'
+                    }`}>
+                      {selectedProject.testCases.length}
+                    </span>
+                  </button>
 
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('bugReports')}
-                  className={`pb-2.5 px-2 border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-                    activeTab === 'bugReports'
-                      ? 'border-[#2563eb] text-[#2563eb] dark:border-[#3b82f6] dark:text-[#60a5fa]'
-                      : 'border-transparent text-[#64748b] dark:text-[#94a3b8] hover:text-[#0f172a] dark:hover:text-[#f8fafc]'
-                  }`}
-                >
-                  <Bug className="w-4 h-4 text-rose-500" />
-                  <span>Bug Reports</span>
-                  <span className={`px-1.5 py-0.2 rounded text-[10px] font-bold ${
-                    activeTab === 'bugReports' 
-                      ? 'bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300' 
-                      : 'bg-rose-50 text-rose-600 dark:bg-rose-950/40 dark:text-rose-400'
-                  }`}>
-                    {selectedProject.bugReports.length} Defect
-                  </span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('overview')}
-                  className={`pb-2.5 px-2 border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-                    activeTab === 'overview'
-                      ? 'border-[#2563eb] text-[#2563eb] dark:border-[#3b82f6] dark:text-[#60a5fa]'
-                      : 'border-transparent text-[#64748b] dark:text-[#94a3b8] hover:text-[#0f172a] dark:hover:text-[#f8fafc]'
-                  }`}
-                >
-                  <FileText className="w-4 h-4" />
-                  <span>Project Overview</span>
-                </button>
+                  {/* Tab: Bug Reports */}
+                  <button
+                    type="button"
+                    role="tab"
+                    id="tab-bug-reports"
+                    aria-selected={activeTab === 'bugReports'}
+                    onClick={() => setActiveTab('bugReports')}
+                    className={`w-full h-12 sm:h-14 min-h-[48px] sm:min-h-[56px] px-3 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 sm:gap-3 text-center select-none active:scale-[0.99] ${
+                      activeTab === 'bugReports'
+                        ? 'bg-rose-600 text-white border-rose-600 dark:border-rose-500 shadow-xs'
+                        : 'bg-white dark:bg-[#131b2e] text-[#334155] dark:text-[#cbd5e1] border-[#cbd5e1] dark:border-[#334155] hover:bg-slate-50 dark:hover:bg-[#1a233a] hover:border-slate-400 dark:hover:border-slate-500 hover:text-[#0f172a] dark:hover:text-white'
+                    }`}
+                  >
+                    <Bug className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors ${activeTab === 'bugReports' ? 'text-white' : 'text-rose-500 dark:text-rose-400'}`} />
+                    <span className="text-xs sm:text-sm md:text-base font-bold tracking-tight whitespace-nowrap">
+                      Bug Reports
+                    </span>
+                    <span className={`px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full text-[11px] sm:text-xs font-bold leading-none shrink-0 transition-colors ${
+                      activeTab === 'bugReports'
+                        ? 'bg-white/20 text-white'
+                        : 'bg-rose-50 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 border border-rose-200/70 dark:border-rose-900/60'
+                    }`}>
+                      {selectedProject.bugReports.length}
+                    </span>
+                  </button>
+                </div>
               </div>
 
               {/* Scrollable Modal Content */}
@@ -602,28 +607,36 @@ export const Projects: React.FC = () => {
                 {/* ============================================================== */}
                 {activeTab === 'testCases' && (
                   <div className="space-y-6">
-                    {/* Header Bar */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#e5e3dc] dark:border-[#1e293b] pb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[11px] font-bold text-[#2563eb] dark:text-[#3b82f6] uppercase tracking-wider">
-                            Section 1 • Test Execution
-                          </span>
-                          <span className="text-xs text-[#64748b] dark:text-[#94a3b8]">•</span>
-                          <span className="text-xs text-[#64748b] dark:text-[#94a3b8]">
-                            Original Test Matrices & Transcribed Records
-                          </span>
+                    {/* Prominent Header Container for Test Cases */}
+                    <div className="p-4 sm:p-5 rounded-2xl border border-blue-200/70 dark:border-blue-900/40 bg-gradient-to-r from-blue-50/70 via-slate-50/50 to-white dark:from-blue-950/25 dark:via-[#131b2e] dark:to-[#111827] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+                      <div className="flex items-start sm:items-center gap-3.5">
+                        <div className="p-2.5 rounded-xl bg-blue-600 text-white shadow-xs shrink-0 flex items-center justify-center">
+                          <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <h4 className="text-base sm:text-lg font-bold text-[#0f172a] dark:text-[#f8fafc]">
-                          Test Cases Documentation
-                        </h4>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-[11px] font-extrabold text-[#2563eb] dark:text-[#60a5fa] uppercase tracking-wider">
+                              Section 1 • Test Execution
+                            </span>
+                            <span className="text-xs text-[#94a3b8] dark:text-[#64748b]">|</span>
+                            <span className="text-xs font-medium text-[#64748b] dark:text-[#94a3b8]">
+                              Original Spreadsheets & Matrix
+                            </span>
+                          </div>
+                          <h4 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
+                            Test Cases
+                          </h4>
+                        </div>
                       </div>
 
-                      {/* Read Only Indicator */}
-                      <div className="flex items-center gap-2 text-xs text-[#64748b] dark:text-[#94a3b8]">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#f1f5f9] dark:bg-[#1e293b] text-[#475569] dark:text-[#cbd5e1] font-mono text-[11px]">
+                      {/* Status & Read Only Badges */}
+                      <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60">
+                          <span>{selectedProject.testCases.length} Executed Cases</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#1a233a] text-[#475569] dark:text-[#cbd5e1] font-mono text-[11px] border border-slate-200 dark:border-slate-800">
                           <Lock className="w-3 h-3 text-emerald-500" />
-                          Read-Only View
+                          Read-Only
                         </span>
                       </div>
                     </div>
@@ -867,26 +880,36 @@ export const Projects: React.FC = () => {
                 {/* ============================================================== */}
                 {activeTab === 'bugReports' && (
                   <div className="space-y-6">
-                    {/* Header Bar */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#e5e3dc] dark:border-[#1e293b] pb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[11px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-wider">
-                            Section 2 • Defect Management
-                          </span>
-                          <span className="text-xs text-[#64748b] dark:text-[#94a3b8]">•</span>
-                          <span className="text-xs text-[#64748b] dark:text-[#94a3b8]">
-                            Documented Defect & Execution Evidence
-                          </span>
+                    {/* Prominent Header Container for Bug Reports */}
+                    <div className="p-4 sm:p-5 rounded-2xl border border-rose-200/80 dark:border-rose-900/40 bg-gradient-to-r from-rose-50/70 via-orange-50/30 to-white dark:from-rose-950/25 dark:via-[#1a1524] dark:to-[#111827] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+                      <div className="flex items-start sm:items-center gap-3.5">
+                        <div className="p-2.5 rounded-xl bg-rose-600 text-white shadow-xs shrink-0 flex items-center justify-center">
+                          <Bug className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <h4 className="text-base sm:text-lg font-bold text-[#0f172a] dark:text-[#f8fafc]">
-                          Bug Reports & Defect Evidence
-                        </h4>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-[11px] font-extrabold text-rose-600 dark:text-rose-400 uppercase tracking-wider">
+                              Section 2 • Defect Management
+                            </span>
+                            <span className="text-xs text-[#94a3b8] dark:text-[#64748b]">|</span>
+                            <span className="text-xs font-medium text-[#64748b] dark:text-[#94a3b8]">
+                              Identified Defects & Evidence
+                            </span>
+                          </div>
+                          <h4 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
+                            Bug Reports
+                          </h4>
+                        </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
-                        <span className="px-2.5 py-1 rounded text-xs font-bold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
-                          1 Defect Identified & Documented
+                      {/* Status & Read Only Badges */}
+                      <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-300 dark:border-rose-800">
+                          <span>1 Defect Documented</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#1a233a] text-[#475569] dark:text-[#cbd5e1] font-mono text-[11px] border border-slate-200 dark:border-slate-800">
+                          <Lock className="w-3 h-3 text-emerald-500" />
+                          Read-Only
                         </span>
                       </div>
                     </div>
