@@ -362,7 +362,7 @@ export const Projects: React.FC = () => {
   return (
     <section 
       id="projects" 
-      className="py-20 md:py-28 border-t border-[#e8e6df] dark:border-[#1e293b] bg-white dark:bg-[#0f1422] transition-colors duration-300"
+      className="py-20 md:py-28 border-t border-[#e8e6df] bg-white transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         
@@ -373,7 +373,7 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
-            className="text-xs font-bold tracking-widest text-[#2563eb] dark:text-[#3b82f6] uppercase mb-2"
+            className="text-xs font-bold tracking-widest text-[#2563eb] uppercase mb-2"
           >
             {PERSONAL_INFO.projectsBadge || "QA Case Studies"}
           </motion.div>
@@ -382,7 +382,7 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-            className="text-3xl md:text-4xl font-extrabold text-[#0f172a] dark:text-[#f8fafc] tracking-tight mb-3"
+            className="text-3xl md:text-4xl font-extrabold text-[#0f172a] tracking-tight mb-3"
           >
             {PERSONAL_INFO.projectsTitle || "Projects"}
           </motion.h2>
@@ -391,7 +391,7 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.45, delay: 0.12, ease: 'easeOut' }}
-            className="text-sm md:text-base text-[#64748b] dark:text-[#94a3b8] leading-relaxed"
+            className="text-sm md:text-base text-[#64748b] leading-relaxed"
           >
             {PERSONAL_INFO.projectsText}
           </motion.p>
@@ -406,53 +406,53 @@ export const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.35, delay: index * 0.05, ease: 'easeOut' }}
-              className="p-6 rounded-2xl bg-[#faf9f6] border border-[#e5e3dc] dark:bg-[#131b2e] dark:border-[#1e293b] shadow-[0_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between transition-all duration-200 hover:border-[#cbd5e1] dark:hover:border-[#334155]"
+              className="p-6 rounded-2xl bg-[#faf9f6] border border-[#e5e3dc] shadow-[0_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between transition-all duration-200 hover:border-[#cbd5e1]"
             >
               <div>
                 {/* Top Row: Category Badge & Project Index */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#2563eb]/10 text-[#2563eb] dark:bg-[#3b82f6]/15 dark:text-[#60a5fa] border border-[#2563eb]/20 dark:border-[#3b82f6]/30">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#2563eb]/10 text-[#2563eb] border border-[#2563eb]/20">
                     <CheckCircle2 className="w-3 h-3" />
                     {project.category}
                   </span>
-                  <span className="text-[11px] text-[#64748b] dark:text-[#94a3b8] font-medium tracking-wide">
+                  <span className="text-[11px] text-[#64748b] font-medium tracking-wide">
                     Case Study 0{index + 1}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg md:text-xl font-bold text-[#0f172a] dark:text-[#f8fafc] tracking-tight mb-2.5">
+                <h3 className="text-lg md:text-xl font-bold text-[#0f172a] tracking-tight mb-2.5">
                   {project.title}
                 </h3>
 
                 {/* Subtitle / Type */}
-                <p className="text-xs font-semibold text-[#64748b] dark:text-[#94a3b8] uppercase tracking-wider mb-3">
+                <p className="text-xs font-semibold text-[#64748b] uppercase tracking-wider mb-3">
                   {project.type}
                 </p>
 
                 {/* Short Description */}
-                <p className="text-sm text-[#475569] dark:text-[#cbd5e1] leading-relaxed mb-5">
+                <p className="text-sm text-[#475569] leading-relaxed mb-5">
                   {project.shortDescription}
                 </p>
               </div>
 
               <div>
                 {/* Deliverables Tags */}
-                <div className="mb-5 pt-4 border-t border-[#eeece6] dark:border-[#1e293b]">
-                  <p className="text-[11px] font-semibold text-[#64748b] dark:text-[#94a3b8] uppercase tracking-wider mb-2">
+                <div className="mb-5 pt-4 border-t border-[#eeece6]">
+                  <p className="text-[11px] font-semibold text-[#64748b] uppercase tracking-wider mb-2">
                     Deliverables
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.deliverableTags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-white dark:bg-[#1a233a] text-[#334155] dark:text-[#cbd5e1] border border-[#e2e8f0] dark:border-[#26334a]"
+                        className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-white text-[#334155] border border-[#e2e8f0]"
                       >
                         {tag}
                       </span>
                     ))}
                     {project.documentationImages && project.documentationImages.length > 0 && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:bg-emerald-400/15 dark:text-emerald-400 border border-emerald-500/20">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
                         <FileSpreadsheet className="w-3 h-3" />
                         Original Spreadsheets ({project.documentationImages.length})
                       </span>
@@ -464,7 +464,7 @@ export const Projects: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handleOpenModal(project)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#0f172a] hover:bg-[#1e293b] dark:bg-[#f8fafc] dark:text-[#0f172a] dark:hover:bg-slate-200 transition-colors duration-200 shadow-xs cursor-pointer group"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#0f172a] hover:bg-[#1e293b] transition-colors duration-200 shadow-xs cursor-pointer group"
                   aria-label={`View details for ${project.title}`}
                 >
                   <span>View Project</span>
@@ -493,7 +493,7 @@ export const Projects: React.FC = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={handleCloseModal}
-              className="absolute inset-0 bg-[#0f172a]/65 dark:bg-black/80 backdrop-blur-xs cursor-pointer"
+              className="absolute inset-0 bg-[#0f172a]/65 backdrop-blur-xs cursor-pointer"
             />
 
             {/* Modal Dialog Card */}
@@ -502,27 +502,27 @@ export const Projects: React.FC = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 12 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="relative w-full max-w-5xl max-h-[94vh] bg-white dark:bg-[#111827] rounded-2xl border border-[#e2e8f0] dark:border-[#1f293d] shadow-2xl flex flex-col overflow-hidden z-10"
+              className="relative w-full max-w-5xl max-h-[94vh] bg-white rounded-2xl border border-[#e2e8f0] shadow-2xl flex flex-col overflow-hidden z-10"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="p-4 sm:p-6 border-b border-[#e5e3dc] dark:border-[#1e293b] flex items-start justify-between gap-4 bg-[#faf9f6]/95 dark:bg-[#131b2e]/95">
+              <div className="p-4 sm:p-6 border-b border-[#e5e3dc] flex items-start justify-between gap-4 bg-[#faf9f6]/95">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#2563eb]/10 text-[#2563eb] dark:bg-[#3b82f6]/15 dark:text-[#60a5fa] border border-[#2563eb]/20 dark:border-[#3b82f6]/30">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-semibold bg-[#2563eb]/10 text-[#2563eb] border border-[#2563eb]/20">
                       <CheckCircle2 className="w-3 h-3" />
                       {selectedProject.category}
                     </span>
-                    <span className="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium">
+                    <span className="text-xs text-[#64748b] font-medium">
                       {selectedProject.type}
                     </span>
-                    <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
                       <Lock className="w-2.5 h-2.5" /> Read-Only
                     </span>
                   </div>
                   <h3 
                     id="modal-project-title" 
-                    className="text-lg sm:text-2xl font-bold text-[#0f172a] dark:text-[#f8fafc] tracking-tight truncate"
+                    className="text-lg sm:text-2xl font-bold text-[#0f172a] tracking-tight truncate"
                   >
                     {selectedProject.title}
                   </h3>
@@ -531,7 +531,7 @@ export const Projects: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleCloseModal}
-                  className="p-1.5 rounded-lg text-[#64748b] hover:text-[#0f172a] dark:text-[#94a3b8] dark:hover:text-[#f8fafc] hover:bg-[#e2e8f0] dark:hover:bg-[#1e293b] transition-colors cursor-pointer shrink-0"
+                  className="p-1.5 rounded-lg text-[#64748b] hover:text-[#0f172a] hover:bg-[#e2e8f0] transition-colors cursor-pointer shrink-0"
                   aria-label="Close project modal"
                 >
                   <X className="w-5 h-5" />
@@ -542,7 +542,7 @@ export const Projects: React.FC = () => {
               <div 
                 role="tablist" 
                 aria-label="Project documentation sections"
-                className="px-4 sm:px-6 py-3 sm:py-3.5 border-b border-[#e2e8f0] dark:border-[#1e293b] bg-[#f8fafc] dark:bg-[#0c1220]"
+                className="px-4 sm:px-6 py-3 sm:py-3.5 border-b border-[#e2e8f0] bg-[#f8fafc]"
               >
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full">
                   {/* Tab: Test Cases */}
@@ -554,18 +554,18 @@ export const Projects: React.FC = () => {
                     onClick={() => setActiveTab('testCases')}
                     className={`w-full h-12 sm:h-14 min-h-[48px] sm:min-h-[56px] px-3 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 sm:gap-3 text-center select-none active:scale-[0.99] ${
                       activeTab === 'testCases'
-                        ? 'bg-blue-600 text-white border-blue-600 dark:border-blue-500 shadow-xs'
-                        : 'bg-white dark:bg-[#131b2e] text-[#334155] dark:text-[#cbd5e1] border-[#cbd5e1] dark:border-[#334155] hover:bg-slate-50 dark:hover:bg-[#1a233a] hover:border-slate-400 dark:hover:border-slate-500 hover:text-[#0f172a] dark:hover:text-white'
+                        ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                        : 'bg-white text-[#334155] border-[#cbd5e1] hover:bg-slate-50 hover:border-slate-400 hover:text-[#0f172a]'
                     }`}
                   >
-                    <CheckSquare className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors ${activeTab === 'testCases' ? 'text-white' : 'text-[#2563eb] dark:text-[#60a5fa]'}`} />
+                    <CheckSquare className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors ${activeTab === 'testCases' ? 'text-white' : 'text-[#2563eb]'}`} />
                     <span className="text-xs sm:text-sm md:text-base font-bold tracking-tight whitespace-nowrap">
                       Test Cases
                     </span>
                     <span className={`px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full text-[11px] sm:text-xs font-bold leading-none shrink-0 transition-colors ${
                       activeTab === 'testCases'
                         ? 'bg-white/20 text-white'
-                        : 'bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/70 dark:border-blue-900/60'
+                        : 'bg-blue-50 text-blue-700 border border-blue-200/70'
                     }`}>
                       {selectedProject.testCases.length}
                     </span>
@@ -580,18 +580,18 @@ export const Projects: React.FC = () => {
                     onClick={() => setActiveTab('bugReports')}
                     className={`w-full h-12 sm:h-14 min-h-[48px] sm:min-h-[56px] px-3 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 sm:gap-3 text-center select-none active:scale-[0.99] ${
                       activeTab === 'bugReports'
-                        ? 'bg-rose-600 text-white border-rose-600 dark:border-rose-500 shadow-xs'
-                        : 'bg-white dark:bg-[#131b2e] text-[#334155] dark:text-[#cbd5e1] border-[#cbd5e1] dark:border-[#334155] hover:bg-slate-50 dark:hover:bg-[#1a233a] hover:border-slate-400 dark:hover:border-slate-500 hover:text-[#0f172a] dark:hover:text-white'
+                        ? 'bg-rose-600 text-white border-rose-600 shadow-xs'
+                        : 'bg-white text-[#334155] border-[#cbd5e1] hover:bg-slate-50 hover:border-slate-400 hover:text-[#0f172a]'
                     }`}
                   >
-                    <Bug className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors ${activeTab === 'bugReports' ? 'text-white' : 'text-rose-500 dark:text-rose-400'}`} />
+                    <Bug className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors ${activeTab === 'bugReports' ? 'text-white' : 'text-rose-500'}`} />
                     <span className="text-xs sm:text-sm md:text-base font-bold tracking-tight whitespace-nowrap">
                       Bug Reports
                     </span>
                     <span className={`px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full text-[11px] sm:text-xs font-bold leading-none shrink-0 transition-colors ${
                       activeTab === 'bugReports'
                         ? 'bg-white/20 text-white'
-                        : 'bg-rose-50 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 border border-rose-200/70 dark:border-rose-900/60'
+                        : 'bg-rose-50 text-rose-700 border border-rose-200/70'
                     }`}>
                       {selectedProject.bugReports.length}
                     </span>
@@ -600,7 +600,7 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Scrollable Modal Content */}
-              <div className="p-4 sm:p-6 overflow-y-auto space-y-6 text-sm text-[#334155] dark:text-[#cbd5e1]">
+              <div className="p-4 sm:p-6 overflow-y-auto space-y-6 text-sm text-[#334155]">
                 
                 {/* ============================================================== */}
                 {/* SECTION 1: TEST CASES                                          */}
@@ -608,22 +608,22 @@ export const Projects: React.FC = () => {
                 {activeTab === 'testCases' && (
                   <div className="space-y-6">
                     {/* Prominent Header Container for Test Cases */}
-                    <div className="p-4 sm:p-5 rounded-2xl border border-blue-200/70 dark:border-blue-900/40 bg-gradient-to-r from-blue-50/70 via-slate-50/50 to-white dark:from-blue-950/25 dark:via-[#131b2e] dark:to-[#111827] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+                    <div className="p-4 sm:p-5 rounded-2xl border border-blue-200/70 bg-gradient-to-r from-blue-50/70 via-slate-50/50 to-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
                       <div className="flex items-start sm:items-center gap-3.5">
                         <div className="p-2.5 rounded-xl bg-blue-600 text-white shadow-xs shrink-0 flex items-center justify-center">
                           <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
                         <div>
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="text-[11px] font-extrabold text-[#2563eb] dark:text-[#60a5fa] uppercase tracking-wider">
+                            <span className="text-[11px] font-extrabold text-[#2563eb] uppercase tracking-wider">
                               Section 1 • Test Execution
                             </span>
-                            <span className="text-xs text-[#94a3b8] dark:text-[#64748b]">|</span>
-                            <span className="text-xs font-medium text-[#64748b] dark:text-[#94a3b8]">
+                            <span className="text-xs text-[#94a3b8]">|</span>
+                            <span className="text-xs font-medium text-[#64748b]">
                               Original Spreadsheets & Matrix
                             </span>
                           </div>
-                          <h4 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
+                          <h4 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
                             Test Cases
                           </h4>
                         </div>
@@ -631,10 +631,10 @@ export const Projects: React.FC = () => {
 
                       {/* Status & Read Only Badges */}
                       <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">
                           <span>{selectedProject.testCases.length} Executed Cases</span>
                         </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#1a233a] text-[#475569] dark:text-[#cbd5e1] font-mono text-[11px] border border-slate-200 dark:border-slate-800">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white text-[#475569] font-mono text-[11px] border border-slate-200">
                           <Lock className="w-3 h-3 text-emerald-500" />
                           Read-Only
                         </span>
@@ -644,11 +644,11 @@ export const Projects: React.FC = () => {
                     {/* Part A: Original Document Screenshots (Click to Zoom) */}
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <h5 className="text-xs font-bold text-[#0f172a] dark:text-[#f8fafc] uppercase tracking-wider flex items-center gap-2">
-                          <FileSpreadsheet className="w-4 h-4 text-[#2563eb] dark:text-[#3b82f6]" />
+                        <h5 className="text-xs font-bold text-[#0f172a] uppercase tracking-wider flex items-center gap-2">
+                          <FileSpreadsheet className="w-4 h-4 text-[#2563eb]" />
                           Original Spreadsheet Captures (Click to Zoom & Pan)
                         </h5>
-                        <span className="text-[11px] text-[#64748b] dark:text-[#94a3b8]">
+                        <span className="text-[11px] text-[#64748b]">
                           2 Spreadsheets
                         </span>
                       </div>
@@ -657,13 +657,13 @@ export const Projects: React.FC = () => {
                         {docImages.filter((d) => d.section === 'Test Cases').map((doc) => (
                           <div
                             key={doc.id}
-                            className="rounded-xl border border-[#e2e8f0] dark:border-[#1e293b] bg-[#faf9f6] dark:bg-[#131b2e] overflow-hidden flex flex-col justify-between shadow-xs hover:border-[#2563eb]/40 transition-all duration-200"
+                            className="rounded-xl border border-[#e2e8f0] bg-[#faf9f6] overflow-hidden flex flex-col justify-between shadow-xs hover:border-[#2563eb]/40 transition-all duration-200"
                           >
-                            <div className="px-3.5 py-2.5 bg-white dark:bg-[#0f1422] border-b border-[#e2e8f0] dark:border-[#1e293b] flex items-center justify-between gap-2">
-                              <span className="font-mono text-xs font-semibold text-[#0f172a] dark:text-[#f8fafc] truncate">
+                            <div className="px-3.5 py-2.5 bg-white border-b border-[#e2e8f0] flex items-center justify-between gap-2">
+                              <span className="font-mono text-xs font-semibold text-[#0f172a] truncate">
                                 {doc.sheetName}
                               </span>
-                              <span className="text-[10px] font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-900/40 shrink-0">
+                              <span className="text-[10px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 shrink-0">
                                 Zoomable
                               </span>
                             </div>
@@ -671,7 +671,7 @@ export const Projects: React.FC = () => {
                             {/* Image Preview Container (Clickable for Zoom) */}
                             <div 
                               onClick={() => setLightboxImage(doc)}
-                              className="relative group cursor-pointer overflow-hidden bg-slate-100 dark:bg-slate-900 aspect-16/9 flex items-center justify-center p-2"
+                              className="relative group cursor-pointer overflow-hidden bg-slate-100 aspect-16/9 flex items-center justify-center p-2"
                               role="button"
                               tabIndex={0}
                               onKeyDown={(e) => {
@@ -685,7 +685,7 @@ export const Projects: React.FC = () => {
                                 className="w-full h-full object-contain rounded transition-transform duration-200 group-hover:scale-[1.02]"
                               />
                               {/* Hover Overlay */}
-                              <div className="absolute inset-0 bg-[#0f172a]/40 dark:bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white">
+                              <div className="absolute inset-0 bg-[#0f172a]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white">
                                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/75 backdrop-blur-xs text-xs font-semibold shadow-lg">
                                   <ZoomIn className="w-4 h-4 text-blue-400" />
                                   <span>Click to Zoom & Inspect</span>
@@ -695,10 +695,10 @@ export const Projects: React.FC = () => {
 
                             <div className="p-3.5 flex flex-col justify-between flex-1">
                               <div>
-                                <h6 className="font-bold text-xs text-[#0f172a] dark:text-[#f8fafc] mb-1">
+                                <h6 className="font-bold text-xs text-[#0f172a] mb-1">
                                   {doc.title}
                                 </h6>
-                                <p className="text-[11px] text-[#64748b] dark:text-[#94a3b8] leading-relaxed mb-3">
+                                <p className="text-[11px] text-[#64748b] leading-relaxed mb-3">
                                   {doc.caption}
                                 </p>
                               </div>
@@ -706,7 +706,7 @@ export const Projects: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={() => setLightboxImage(doc)}
-                                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-[#1a233a] hover:bg-[#f1f5f9] dark:hover:bg-[#26334a] text-[#0f172a] dark:text-[#f8fafc] border border-[#cbd5e1] dark:border-[#334155] transition-colors cursor-pointer"
+                                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white hover:bg-[#f1f5f9] text-[#0f172a] border border-[#cbd5e1] transition-colors cursor-pointer"
                               >
                                 <Maximize2 className="w-3.5 h-3.5" />
                                 <span>Inspect Full Document</span>
@@ -721,11 +721,11 @@ export const Projects: React.FC = () => {
                     <div className="space-y-4 pt-3">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div>
-                          <h5 className="text-xs font-bold text-[#0f172a] dark:text-[#f8fafc] uppercase tracking-wider flex items-center gap-2">
-                            <Layers className="w-4 h-4 text-[#2563eb] dark:text-[#3b82f6]" />
+                          <h5 className="text-xs font-bold text-[#0f172a] uppercase tracking-wider flex items-center gap-2">
+                            <Layers className="w-4 h-4 text-[#2563eb]" />
                             Transcribed Execution Records (Word-for-Word)
                           </h5>
-                          <p className="text-xs text-[#64748b] dark:text-[#94a3b8] mt-0.5">
+                          <p className="text-xs text-[#64748b] mt-0.5">
                             Exact data extracted from the testing spreadsheets without modifications.
                           </p>
                         </div>
@@ -738,16 +738,16 @@ export const Projects: React.FC = () => {
                             placeholder="Filter by ID or Name..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-[#cbd5e1] dark:border-[#334155] bg-white dark:bg-[#0f1422] text-[#0f172a] dark:text-[#f8fafc] focus:outline-none focus:ring-1 focus:ring-[#2563eb]"
+                            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-[#cbd5e1] bg-white text-[#0f172a] focus:outline-none focus:ring-1 focus:ring-[#2563eb]"
                           />
                         </div>
                       </div>
 
                       {/* Desktop Document-Style Table View */}
-                      <div className="hidden lg:block overflow-x-auto rounded-xl border border-[#e2e8f0] dark:border-[#1e293b] bg-white dark:bg-[#0f1422] shadow-xs">
+                      <div className="hidden lg:block overflow-x-auto rounded-xl border border-[#e2e8f0] bg-white shadow-xs">
                         <table className="w-full text-left border-collapse text-xs">
                           <thead>
-                            <tr className="bg-[#f1f5f9] dark:bg-[#1a233a] text-[#475569] dark:text-[#cbd5e1] border-b border-[#e2e8f0] dark:border-[#1e293b]">
+                            <tr className="bg-[#f1f5f9] text-[#475569] border-b border-[#e2e8f0]">
                               <th className="py-2.5 px-3 font-semibold w-24">Test ID</th>
                               <th className="py-2.5 px-3 font-semibold w-40">Test Name</th>
                               <th className="py-2.5 px-3 font-semibold w-52">Test Description</th>
@@ -759,38 +759,38 @@ export const Projects: React.FC = () => {
                               <th className="py-2.5 px-3 font-semibold w-20 text-center">Status</th>
                             </tr>
                           </thead>
-                          <tbody className="divide-y divide-[#e2e8f0] dark:divide-[#1e293b]">
+                          <tbody className="divide-y divide-[#e2e8f0]">
                             {filteredTestCases.map((tc) => (
                               <tr 
                                 key={tc.testId}
-                                className="hover:bg-slate-50/70 dark:hover:bg-slate-900/40 transition-colors"
+                                className="hover:bg-slate-50/70 transition-colors"
                               >
-                                <td className="py-3 px-3 font-mono font-bold text-[#0f172a] dark:text-[#f8fafc] whitespace-nowrap align-top">
+                                <td className="py-3 px-3 font-mono font-bold text-[#0f172a] whitespace-nowrap align-top">
                                   {tc.testId}
                                 </td>
-                                <td className="py-3 px-3 font-medium text-[#1e293b] dark:text-[#f1f5f9] align-top">
+                                <td className="py-3 px-3 font-medium text-[#1e293b] align-top">
                                   {tc.testName}
                                 </td>
-                                <td className="py-3 px-3 text-[#475569] dark:text-[#cbd5e1] leading-relaxed align-top">
+                                <td className="py-3 px-3 text-[#475569] leading-relaxed align-top">
                                   {tc.testDescription}
                                 </td>
-                                <td className="py-3 px-3 text-[#64748b] dark:text-[#94a3b8] whitespace-pre-line leading-relaxed align-top text-[11px]">
+                                <td className="py-3 px-3 text-[#64748b] whitespace-pre-line leading-relaxed align-top text-[11px]">
                                   {tc.testPrecondition}
                                 </td>
-                                <td className="py-3 px-3 text-[#475569] dark:text-[#cbd5e1] whitespace-pre-line font-mono text-[11px] align-top">
+                                <td className="py-3 px-3 text-[#475569] whitespace-pre-line font-mono text-[11px] align-top">
                                   {tc.testData}
                                 </td>
-                                <td className="py-3 px-3 text-[#475569] dark:text-[#cbd5e1] whitespace-pre-line text-[11px] align-top">
+                                <td className="py-3 px-3 text-[#475569] whitespace-pre-line text-[11px] align-top">
                                   {tc.testSteps}
                                 </td>
-                                <td className="py-3 px-3 text-[#334155] dark:text-[#cbd5e1] whitespace-pre-line leading-relaxed align-top text-[11px]">
+                                <td className="py-3 px-3 text-[#334155] whitespace-pre-line leading-relaxed align-top text-[11px]">
                                   {tc.expectedResult}
                                 </td>
-                                <td className="py-3 px-3 text-[#334155] dark:text-[#cbd5e1] whitespace-pre-line leading-relaxed align-top text-[11px]">
+                                <td className="py-3 px-3 text-[#334155] whitespace-pre-line leading-relaxed align-top text-[11px]">
                                   {tc.actualResult}
                                 </td>
                                 <td className="py-3 px-3 text-center align-top whitespace-nowrap">
-                                  <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800/60">
+                                  <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
                                     {tc.status}
                                   </span>
                                 </td>
@@ -805,65 +805,65 @@ export const Projects: React.FC = () => {
                         {filteredTestCases.map((tc) => (
                           <div
                             key={tc.testId}
-                            className="p-4 rounded-xl border border-[#e5e3dc] dark:border-[#1e293b] bg-[#faf9f6] dark:bg-[#131b2e] space-y-3"
+                            className="p-4 rounded-xl border border-[#e5e3dc] bg-[#faf9f6] space-y-3"
                           >
-                            <div className="flex items-center justify-between gap-2 border-b border-[#e2e8f0] dark:border-[#1e293b] pb-2">
+                            <div className="flex items-center justify-between gap-2 border-b border-[#e2e8f0] pb-2">
                               <div className="flex items-center gap-2">
                                 <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#2563eb] text-white">
                                   {tc.testId}
                                 </span>
-                                <h6 className="font-bold text-xs text-[#0f172a] dark:text-[#f8fafc]">
+                                <h6 className="font-bold text-xs text-[#0f172a]">
                                   {tc.testName}
                                 </h6>
                               </div>
-                              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+                              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
                                 {tc.status}
                               </span>
                             </div>
 
-                            <p className="text-xs text-[#334155] dark:text-[#cbd5e1] leading-relaxed">
-                              <strong className="text-[#0f172a] dark:text-[#f8fafc]">Description: </strong>
+                            <p className="text-xs text-[#334155] leading-relaxed">
+                              <strong className="text-[#0f172a]">Description: </strong>
                               {tc.testDescription}
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                              <div className="p-2.5 rounded-lg bg-white dark:bg-[#0f1422] border border-[#e2e8f0] dark:border-[#1e293b]">
-                                <span className="font-semibold text-[#0f172a] dark:text-[#f8fafc] block mb-1 text-[11px] uppercase tracking-wider">
+                              <div className="p-2.5 rounded-lg bg-white border border-[#e2e8f0]">
+                                <span className="font-semibold text-[#0f172a] block mb-1 text-[11px] uppercase tracking-wider">
                                   Preconditions
                                 </span>
-                                <p className="text-[#64748b] dark:text-[#94a3b8] whitespace-pre-line text-[11px]">
+                                <p className="text-[#64748b] whitespace-pre-line text-[11px]">
                                   {tc.testPrecondition}
                                 </p>
                               </div>
 
-                              <div className="p-2.5 rounded-lg bg-white dark:bg-[#0f1422] border border-[#e2e8f0] dark:border-[#1e293b]">
-                                <span className="font-semibold text-[#0f172a] dark:text-[#f8fafc] block mb-1 text-[11px] uppercase tracking-wider">
+                              <div className="p-2.5 rounded-lg bg-white border border-[#e2e8f0]">
+                                <span className="font-semibold text-[#0f172a] block mb-1 text-[11px] uppercase tracking-wider">
                                   Test Data & Steps
                                 </span>
-                                <p className="font-mono text-[#475569] dark:text-[#cbd5e1] whitespace-pre-line text-[11px] mb-1">
+                                <p className="font-mono text-[#475569] whitespace-pre-line text-[11px] mb-1">
                                   {tc.testData}
                                 </p>
-                                <p className="text-[#64748b] dark:text-[#94a3b8] whitespace-pre-line text-[11px]">
+                                <p className="text-[#64748b] whitespace-pre-line text-[11px]">
                                   {tc.testSteps}
                                 </p>
                               </div>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                              <div className="p-2.5 rounded-lg bg-white dark:bg-[#0f1422] border border-[#e2e8f0] dark:border-[#1e293b]">
-                                <span className="font-semibold text-emerald-700 dark:text-emerald-400 block mb-0.5 text-[11px]">
+                              <div className="p-2.5 rounded-lg bg-white border border-[#e2e8f0]">
+                                <span className="font-semibold text-emerald-700 block mb-0.5 text-[11px]">
                                   Expected Result
                                 </span>
-                                <p className="text-[#334155] dark:text-[#cbd5e1] whitespace-pre-line text-[11px]">
+                                <p className="text-[#334155] whitespace-pre-line text-[11px]">
                                   {tc.expectedResult}
                                 </p>
                               </div>
 
-                              <div className="p-2.5 rounded-lg bg-white dark:bg-[#0f1422] border border-[#e2e8f0] dark:border-[#1e293b]">
-                                <span className="font-semibold text-blue-700 dark:text-blue-400 block mb-0.5 text-[11px]">
+                              <div className="p-2.5 rounded-lg bg-white border border-[#e2e8f0]">
+                                <span className="font-semibold text-blue-700 block mb-0.5 text-[11px]">
                                   Actual Result
                                 </span>
-                                <p className="text-[#334155] dark:text-[#cbd5e1] whitespace-pre-line text-[11px]">
+                                <p className="text-[#334155] whitespace-pre-line text-[11px]">
                                   {tc.actualResult}
                                 </p>
                               </div>
@@ -881,22 +881,22 @@ export const Projects: React.FC = () => {
                 {activeTab === 'bugReports' && (
                   <div className="space-y-6">
                     {/* Prominent Header Container for Bug Reports */}
-                    <div className="p-4 sm:p-5 rounded-2xl border border-rose-200/80 dark:border-rose-900/40 bg-gradient-to-r from-rose-50/70 via-orange-50/30 to-white dark:from-rose-950/25 dark:via-[#1a1524] dark:to-[#111827] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+                    <div className="p-4 sm:p-5 rounded-2xl border border-rose-200/80 bg-gradient-to-r from-rose-50/70 via-orange-50/30 to-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
                       <div className="flex items-start sm:items-center gap-3.5">
                         <div className="p-2.5 rounded-xl bg-rose-600 text-white shadow-xs shrink-0 flex items-center justify-center">
                           <Bug className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
                         <div>
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="text-[11px] font-extrabold text-rose-600 dark:text-rose-400 uppercase tracking-wider">
+                            <span className="text-[11px] font-extrabold text-rose-600 uppercase tracking-wider">
                               Section 2 • Defect Management
                             </span>
-                            <span className="text-xs text-[#94a3b8] dark:text-[#64748b]">|</span>
-                            <span className="text-xs font-medium text-[#64748b] dark:text-[#94a3b8]">
+                            <span className="text-xs text-[#94a3b8]">|</span>
+                            <span className="text-xs font-medium text-[#64748b]">
                               Identified Defects & Evidence
                             </span>
                           </div>
-                          <h4 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
+                          <h4 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
                             Bug Reports
                           </h4>
                         </div>
@@ -904,10 +904,10 @@ export const Projects: React.FC = () => {
 
                       {/* Status & Read Only Badges */}
                       <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-300 dark:border-rose-800">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">
                           <span>1 Defect Documented</span>
                         </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#1a233a] text-[#475569] dark:text-[#cbd5e1] font-mono text-[11px] border border-slate-200 dark:border-slate-800">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white text-[#475569] font-mono text-[11px] border border-slate-200">
                           <Lock className="w-3 h-3 text-emerald-500" />
                           Read-Only
                         </span>
@@ -915,22 +915,22 @@ export const Projects: React.FC = () => {
                     </div>
 
                     {/* Part A: Defect Execution Screenshot Evidence */}
-                    <div className="p-4 sm:p-5 rounded-xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/40 dark:bg-rose-950/20 space-y-3">
+                    <div className="p-4 sm:p-5 rounded-xl border border-rose-200 bg-rose-50/40 space-y-3">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
                           <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-600 text-white uppercase">
                             Execution Evidence
                           </span>
-                          <h5 className="font-bold text-xs sm:text-sm text-rose-900 dark:text-rose-200">
+                          <h5 className="font-bold text-xs sm:text-sm text-rose-900">
                             Spreadsheet Row 6: Failed Test TC_ST_TIME_1
                           </h5>
                         </div>
-                        <span className="text-xs font-mono text-rose-700 dark:text-rose-400 font-semibold">
+                        <span className="text-xs font-mono text-rose-700 font-semibold">
                           Status: Fail (Highlighted in Original Matrix)
                         </span>
                       </div>
 
-                      <p className="text-xs text-[#475569] dark:text-[#cbd5e1] leading-relaxed">
+                      <p className="text-xs text-[#475569] leading-relaxed">
                         Defect identified during time format validation: the time field accepted 12-hour format instead of enforcing 24-hour format constraints. Click below to inspect the original high-resolution spreadsheet.
                       </p>
 
@@ -938,7 +938,7 @@ export const Projects: React.FC = () => {
                       {docImages.find((d) => d.id === 'doc-bug-1') && (
                         <div 
                           onClick={() => setLightboxImage(docImages.find((d) => d.id === 'doc-bug-1')!)}
-                          className="group relative rounded-xl border border-rose-300 dark:border-rose-900/60 overflow-hidden cursor-pointer bg-white shadow-xs"
+                          className="group relative rounded-xl border border-rose-300 overflow-hidden cursor-pointer bg-white shadow-xs"
                           role="button"
                           tabIndex={0}
                           onKeyDown={(e) => {
@@ -965,7 +965,7 @@ export const Projects: React.FC = () => {
 
                     {/* Part B: Transcribed Bug Report Record (Verbatim) */}
                     <div className="space-y-4 pt-2">
-                      <h5 className="text-xs font-bold text-[#0f172a] dark:text-[#f8fafc] uppercase tracking-wider flex items-center gap-2">
+                      <h5 className="text-xs font-bold text-[#0f172a] uppercase tracking-wider flex items-center gap-2">
                         <Bug className="w-4 h-4 text-rose-500" />
                         Bug Report Details (Word-for-Word Transcription)
                       </h5>
@@ -973,57 +973,57 @@ export const Projects: React.FC = () => {
                       {selectedProject.bugReports.map((bug) => (
                         <div
                           key={bug.bugId}
-                          className="p-5 rounded-xl border border-rose-200 dark:border-rose-900/40 bg-white dark:bg-[#131b2e] shadow-xs space-y-4"
+                          className="p-5 rounded-xl border border-rose-200 bg-white shadow-xs space-y-4"
                         >
                           {/* Defect Header */}
-                          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e2e8f0] dark:border-[#1e293b] pb-3">
+                          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e2e8f0] pb-3">
                             <div className="flex items-center gap-2.5">
                               <span className="font-mono text-xs font-bold px-2.5 py-1 rounded bg-rose-600 text-white">
                                 {bug.bugId}
                               </span>
                               <div>
-                                <h6 className="font-bold text-sm text-[#0f172a] dark:text-[#f8fafc]">
+                                <h6 className="font-bold text-sm text-[#0f172a]">
                                   {bug.testName}
                                 </h6>
-                                <span className="text-[11px] text-[#64748b] dark:text-[#94a3b8] font-mono">
+                                <span className="text-[11px] text-[#64748b] font-mono">
                                   {bug.sourceSheet}
                                 </span>
                               </div>
                             </div>
-                            <span className="px-2.5 py-1 rounded text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-300 dark:border-rose-800">
+                            <span className="px-2.5 py-1 rounded text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">
                               Status: {bug.status}
                             </span>
                           </div>
 
                           {/* Description */}
                           <div>
-                            <span className="font-semibold text-xs text-[#0f172a] dark:text-[#f8fafc] block mb-1">
+                            <span className="font-semibold text-xs text-[#0f172a] block mb-1">
                               Test Description:
                             </span>
-                            <p className="text-xs text-[#334155] dark:text-[#cbd5e1] leading-relaxed">
+                            <p className="text-xs text-[#334155] leading-relaxed">
                               {bug.description}
                             </p>
                           </div>
 
                           {/* Precondition & Steps */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                            <div className="p-3 rounded-lg bg-[#faf9f6] dark:bg-[#0f1422] border border-[#e2e8f0] dark:border-[#1e293b]">
-                              <span className="font-bold text-[#0f172a] dark:text-[#f8fafc] block mb-1.5 text-[11px] uppercase tracking-wider">
+                            <div className="p-3 rounded-lg bg-[#faf9f6] border border-[#e2e8f0]">
+                              <span className="font-bold text-[#0f172a] block mb-1.5 text-[11px] uppercase tracking-wider">
                                 Test Precondition
                               </span>
-                              <p className="text-[#475569] dark:text-[#cbd5e1] whitespace-pre-line text-xs leading-relaxed">
+                              <p className="text-[#475569] whitespace-pre-line text-xs leading-relaxed">
                                 {bug.preconditions}
                               </p>
                             </div>
 
-                            <div className="p-3 rounded-lg bg-[#faf9f6] dark:bg-[#0f1422] border border-[#e2e8f0] dark:border-[#1e293b]">
-                              <span className="font-bold text-[#0f172a] dark:text-[#f8fafc] block mb-1.5 text-[11px] uppercase tracking-wider">
+                            <div className="p-3 rounded-lg bg-[#faf9f6] border border-[#e2e8f0]">
+                              <span className="font-bold text-[#0f172a] block mb-1.5 text-[11px] uppercase tracking-wider">
                                 Test Data & Test Steps
                               </span>
-                              <p className="font-mono text-[#334155] dark:text-[#cbd5e1] whitespace-pre-line text-xs mb-2">
+                              <p className="font-mono text-[#334155] whitespace-pre-line text-xs mb-2">
                                 {bug.testData}
                               </p>
-                              <p className="text-[#475569] dark:text-[#cbd5e1] whitespace-pre-line text-xs leading-relaxed">
+                              <p className="text-[#475569] whitespace-pre-line text-xs leading-relaxed">
                                 {bug.stepsToReproduce}
                               </p>
                             </div>
@@ -1031,22 +1031,22 @@ export const Projects: React.FC = () => {
 
                           {/* Discrepancy: Expected vs Actual */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                            <div className="p-3.5 rounded-lg bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40">
-                              <div className="flex items-center gap-1.5 mb-1 text-emerald-800 dark:text-emerald-400 font-bold">
+                            <div className="p-3.5 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                              <div className="flex items-center gap-1.5 mb-1 text-emerald-800 font-bold">
                                 <CheckSquare className="w-3.5 h-3.5" />
                                 <span>Expected Result</span>
                               </div>
-                              <p className="text-emerald-900 dark:text-emerald-200 text-xs leading-relaxed">
+                              <p className="text-emerald-900 text-xs leading-relaxed">
                                 {bug.expectedResult}
                               </p>
                             </div>
 
-                            <div className="p-3.5 rounded-lg bg-rose-50/80 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60">
-                              <div className="flex items-center gap-1.5 mb-1 text-rose-800 dark:text-rose-400 font-bold">
+                            <div className="p-3.5 rounded-lg bg-rose-50/80 border border-rose-200">
+                              <div className="flex items-center gap-1.5 mb-1 text-rose-800 font-bold">
                                 <AlertTriangle className="w-3.5 h-3.5" />
                                 <span>Actual Result (Defect)</span>
                               </div>
-                              <p className="text-rose-900 dark:text-rose-200 text-xs font-medium leading-relaxed">
+                              <p className="text-rose-900 text-xs font-medium leading-relaxed">
                                 {bug.actualResult}
                               </p>
                             </div>
@@ -1064,24 +1064,24 @@ export const Projects: React.FC = () => {
                   <div className="space-y-6">
                     {/* Project Description */}
                     <div>
-                      <h4 className="text-xs font-bold text-[#64748b] dark:text-[#94a3b8] uppercase tracking-wider mb-2">
+                      <h4 className="text-xs font-bold text-[#64748b] uppercase tracking-wider mb-2">
                         Project Description
                       </h4>
-                      <p className="text-sm sm:text-base text-[#1e293b] dark:text-[#f1f5f9] leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#1e293b] leading-relaxed">
                         {selectedProject.description}
                       </p>
                     </div>
 
                     {/* Work Performed */}
-                    <div className="p-5 rounded-xl bg-[#faf9f6] dark:bg-[#131b2e] border border-[#e5e3dc] dark:border-[#1e293b]">
-                      <h4 className="text-xs font-bold text-[#0f172a] dark:text-[#f8fafc] uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <ClipboardCheck className="w-4 h-4 text-[#2563eb] dark:text-[#3b82f6]" />
+                    <div className="p-5 rounded-xl bg-[#faf9f6] border border-[#e5e3dc]">
+                      <h4 className="text-xs font-bold text-[#0f172a] uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <ClipboardCheck className="w-4 h-4 text-[#2563eb]" />
                         Work Performed
                       </h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                         {selectedProject.workPerformed.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569] dark:text-[#cbd5e1]">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] dark:bg-[#3b82f6] mt-2 shrink-0" />
+                          <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#475569]">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] mt-2 shrink-0" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -1093,16 +1093,16 @@ export const Projects: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setActiveTab('testCases')}
-                        className="p-4 rounded-xl border border-[#e2e8f0] dark:border-[#1e293b] bg-white dark:bg-[#0f1422] hover:border-[#2563eb]/50 text-left transition-colors cursor-pointer group"
+                        className="p-4 rounded-xl border border-[#e2e8f0] bg-white hover:border-[#2563eb]/50 text-left transition-colors cursor-pointer group"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-bold text-[#2563eb] dark:text-[#3b82f6]">Section 1</span>
+                          <span className="text-xs font-bold text-[#2563eb]">Section 1</span>
                           <CheckSquare className="w-4 h-4 text-[#64748b] group-hover:text-[#2563eb] transition-colors" />
                         </div>
-                        <div className="font-bold text-sm text-[#0f172a] dark:text-[#f8fafc] mb-1">
+                        <div className="font-bold text-sm text-[#0f172a] mb-1">
                           View Test Cases
                         </div>
-                        <p className="text-xs text-[#64748b] dark:text-[#94a3b8]">
+                        <p className="text-xs text-[#64748b]">
                           {selectedProject.testCases.length} executed test cases & 2 original spreadsheet captures.
                         </p>
                       </button>
@@ -1110,16 +1110,16 @@ export const Projects: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setActiveTab('bugReports')}
-                        className="p-4 rounded-xl border border-rose-200 dark:border-rose-900/40 bg-white dark:bg-[#0f1422] hover:border-rose-400 text-left transition-colors cursor-pointer group"
+                        className="p-4 rounded-xl border border-rose-200 bg-white hover:border-rose-400 text-left transition-colors cursor-pointer group"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-bold text-rose-600 dark:text-rose-400">Section 2</span>
+                          <span className="text-xs font-bold text-rose-600">Section 2</span>
                           <Bug className="w-4 h-4 text-rose-500 group-hover:scale-110 transition-transform" />
                         </div>
-                        <div className="font-bold text-sm text-[#0f172a] dark:text-[#f8fafc] mb-1">
+                        <div className="font-bold text-sm text-[#0f172a] mb-1">
                           View Bug Reports
                         </div>
-                        <p className="text-xs text-[#64748b] dark:text-[#94a3b8]">
+                        <p className="text-xs text-[#64748b]">
                           Documented defect TC_ST_TIME_1 with execution evidence and reproduction steps.
                         </p>
                       </button>
@@ -1130,8 +1130,8 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-4 sm:p-5 border-t border-[#e5e3dc] dark:border-[#1e293b] flex items-center justify-between gap-3 bg-[#faf9f6]/95 dark:bg-[#131b2e]/95">
-                <span className="text-xs text-[#64748b] dark:text-[#94a3b8] hidden sm:inline">
+              <div className="p-4 sm:p-5 border-t border-[#e5e3dc] flex items-center justify-between gap-3 bg-[#faf9f6]/95">
+                <span className="text-xs text-[#64748b] hidden sm:inline">
                   QA Portfolio Documentation • Static Screenshots & Verbatim Execution Logs
                 </span>
                 <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
@@ -1142,7 +1142,7 @@ export const Projects: React.FC = () => {
                       const el = document.getElementById('contact');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-[#0f172a] dark:text-[#f8fafc] bg-white dark:bg-[#1a233a] hover:bg-[#f1f5f9] dark:hover:bg-[#26334a] border border-[#cbd5e1] dark:border-[#334155] rounded-lg transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-[#0f172a] bg-white hover:bg-[#f1f5f9] border border-[#cbd5e1] rounded-lg transition-colors cursor-pointer"
                   >
                     <span>Discuss Project</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -1150,7 +1150,7 @@ export const Projects: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleCloseModal}
-                    className="px-4 py-1.5 text-xs font-semibold text-white bg-[#0f172a] hover:bg-[#1e293b] dark:bg-[#f8fafc] dark:text-[#0f172a] dark:hover:bg-slate-200 rounded-lg transition-colors cursor-pointer"
+                    className="px-4 py-1.5 text-xs font-semibold text-white bg-[#0f172a] hover:bg-[#1e293b] rounded-lg transition-colors cursor-pointer"
                   >
                     Close
                   </button>

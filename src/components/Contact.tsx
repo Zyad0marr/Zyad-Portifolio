@@ -62,7 +62,7 @@ export const Contact: React.FC = () => {
       href: PERSONAL_INFO.linkedinUrl,
       isExternal: true,
       description: "Connect on LinkedIn",
-      iconColor: "text-[#0a66c2] dark:text-[#38bdf8]",
+      iconColor: "text-[#0a66c2]",
     },
     {
       id: "whatsapp",
@@ -71,7 +71,7 @@ export const Contact: React.FC = () => {
       href: PERSONAL_INFO.whatsappUrl,
       isExternal: true,
       description: "Chat on WhatsApp",
-      iconColor: "text-emerald-600 dark:text-emerald-400",
+      iconColor: "text-emerald-600",
     },
     {
       id: "email",
@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
       href: PERSONAL_INFO.mailtoUrl,
       isExternal: false,
       description: "Send an email",
-      iconColor: "text-[#2563eb] dark:text-[#60a5fa]",
+      iconColor: "text-[#2563eb]",
       hasCopy: true,
     },
   ];
@@ -88,7 +88,7 @@ export const Contact: React.FC = () => {
   return (
     <section 
       id="contact" 
-      className="py-20 md:py-28 border-t border-[#e8e6df] dark:border-[#1e293b] bg-white dark:bg-[#0f1422] transition-colors duration-300"
+      className="py-20 md:py-28 border-t border-[#e8e6df] bg-white"
     >
       <div className="max-w-4xl mx-auto px-6 md:px-10">
         
@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] dark:text-[#f8fafc] tracking-tight mb-3"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-3"
           >
             Get In Touch
           </motion.h2>
@@ -109,7 +109,7 @@ export const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: 0.06, ease: 'easeOut' }}
-            className="text-base sm:text-lg text-[#64748b] dark:text-[#94a3b8]"
+            className="text-base sm:text-lg text-[#64748b]"
           >
             Reach out through your preferred channel.
           </motion.p>
@@ -132,36 +132,36 @@ export const Contact: React.FC = () => {
                   href={item.href}
                   target={item.isExternal ? "_blank" : undefined}
                   rel={item.isExternal ? "noopener noreferrer" : undefined}
-                  className="group flex-1 p-5 rounded-2xl border border-[#e5e3dc] dark:border-[#1e293b] bg-[#faf9f6] dark:bg-[#131b2e] hover:bg-white dark:hover:bg-[#1a243b] hover:border-[#cbd5e1] dark:hover:border-[#334155] transition-all duration-200 flex flex-col justify-between cursor-pointer"
+                  className="group flex-1 p-5 rounded-2xl border border-[#e5e3dc] bg-[#faf9f6] hover:bg-white hover:border-[#cbd5e1] transition-all duration-200 flex flex-col justify-between cursor-pointer"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#0f1422] border border-[#e8e6df] dark:border-[#1e293b] flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform duration-200">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-[#e8e6df] flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform duration-200">
                       <Icon className={`w-5 h-5 ${item.iconColor}`} />
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#94a3b8] group-hover:text-[#0f172a] dark:group-hover:text-[#f8fafc] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+                    <ArrowUpRight className="w-4 h-4 text-[#94a3b8] group-hover:text-[#0f172a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
                   </div>
 
                   <div>
-                    <div className="text-base font-bold text-[#0f172a] dark:text-[#f8fafc] mb-1">
+                    <div className="text-base font-bold text-[#0f172a] mb-1">
                       {item.label}
                     </div>
-                    <div className="text-xs text-[#64748b] dark:text-[#94a3b8]">
+                    <div className="text-xs text-[#64748b]">
                       {item.description}
                     </div>
                   </div>
 
                   {item.hasCopy && (
-                    <div className="pt-3 mt-4 border-t border-[#eeece6] dark:border-[#1e293b]/70 flex items-center justify-end">
+                    <div className="pt-3 mt-4 border-t border-[#eeece6] flex items-center justify-end">
                       <button
                         type="button"
                         onClick={copyEmailToClipboard}
-                        className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#64748b] dark:text-[#94a3b8] hover:text-[#0f172a] dark:hover:text-[#f8fafc] transition-colors py-0.5 px-1 rounded cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#64748b] hover:text-[#0f172a] transition-colors py-0.5 px-1 rounded cursor-pointer"
                         title="Copy email to clipboard"
                       >
                         {copied ? (
                           <>
-                            <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Copied</span>
+                            <Check className="w-3 h-3 text-emerald-600" />
+                            <span className="text-emerald-600 font-semibold">Copied</span>
                           </>
                         ) : (
                           <>
@@ -188,7 +188,7 @@ export const Contact: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-xl bg-[#0f172a] dark:bg-[#1e293b] text-white text-xs font-medium shadow-lg flex items-center gap-2 border border-slate-700 dark:border-slate-600"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-xl bg-[#0f172a] text-white text-xs font-medium shadow-lg flex items-center gap-2 border border-slate-700"
           >
             <Check className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>{toastMessage}</span>

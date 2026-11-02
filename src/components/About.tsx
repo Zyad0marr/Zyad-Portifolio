@@ -6,7 +6,7 @@ export const About: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="py-20 md:py-28 border-t border-[#e8e6df] dark:border-[#1e293b] bg-white dark:bg-[#0f1422] transition-colors duration-300"
+      className="py-20 md:py-28 border-t border-[#e8e6df] bg-white"
     >
       <div className="max-w-4xl mx-auto px-6 md:px-10">
         
@@ -16,7 +16,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] dark:text-[#f8fafc] tracking-tight mb-8"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] tracking-tight mb-8"
         >
           About
         </motion.h2>
@@ -27,7 +27,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-          className="space-y-6 text-base sm:text-lg text-[#334155] dark:text-[#cbd5e1] leading-relaxed"
+          className="space-y-6 text-base sm:text-lg text-[#334155] leading-relaxed"
         >
           <p>
             {PERSONAL_INFO.aboutParagraph1}

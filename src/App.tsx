@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Cover } from './components/Cover';
 import { About } from './components/About';
@@ -10,7 +9,7 @@ import { CallToAction } from './components/CallToAction';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
-function PortfolioContent() {
+export default function App() {
   const [activeSection, setActiveSection] = useState<string>('cover');
 
   useEffect(() => {
@@ -45,7 +44,7 @@ function PortfolioContent() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#faf9f6] text-[#0f172a] dark:bg-[#0b0f19] dark:text-[#f8fafc] flex flex-col font-['Manrope',sans-serif] transition-colors duration-300">
+    <div className="min-h-screen bg-[#faf9f6] text-[#0f172a] flex flex-col font-['Manrope',sans-serif]">
       {/* Sticky Minimalist Navigation */}
       <Navbar activeSection={activeSection} />
 
@@ -63,13 +62,5 @@ function PortfolioContent() {
       {/* Minimal Footer */}
       <Footer />
     </div>
-  );
-}
-
-export default function App() {
-  return (
-    <ThemeProvider>
-      <PortfolioContent />
-    </ThemeProvider>
   );
 }
